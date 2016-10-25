@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!-- 
+Securely display a set of products in the customer account area, filtered by a new product attribute: 'handle_display'.
+
+@package 	Ecommistry_ProductList
+@author		Karl Lurman <karl.lurman@gmail.com 
+--> 
+<config>
+    <modules>
+        <Ecommistry_ProductList>
+            <version>1.0</version>
+        </Ecommistry_ProductList>
+    </modules>
+    <global>
+        <models>
+            <ecommistry_productlist>
+                <class>Ecommistry_ProductList_Model</class>
+            </ecommistry_productlist>
+        </models>
+    	<helpers>
+        	<ecommistry_productlist>
+            	<class>Ecommistry_ProductList_Helper</class>
+        	</ecommistry_productlist>
+    	</helpers>
+    	<blocks>
+        	<productlist>
+            	<class>Ecommistry_ProductList_Block</class>
+        	</productlist>
+    	</blocks>
+        <resources>
+            <ecommistry_productlist_setup>
+                <setup>
+                    <module>Ecommistry_ProductList</module>
+                </setup>
+            </ecommistry_productlist_setup>
+        </resources>    	
+    </global>
+    <adminhtml>
+	    <acl>
+	        <resources>
+	            <admin>
+	                <children>
+	                    <system>
+	                        <children>
+	                            <config>
+	                                <children>
+	                                    <ecommistry_productlist>
+	                                        <title>Ecommistry Productlist</title>
+	                                    </ecommistry_productlist>
+	                                </children>
+	                            </config>
+	                        </children>
+	                    </system>
+	                </children>
+	            </admin>
+	        </resources>
+	    </acl>
+	</adminhtml>
+    <frontend>
+        <layout>
+            <updates>
+                <ecommistry_productlist>
+                    <file>ecommistry_productlist.xml</file>
+                </ecommistry_productlist>                
+            </updates>
+        </layout>
+        <routers>
+            <productlist>
+                <use>standard</use>
+                <args>
+                    <module>Ecommistry_ProductList</module>
+                    <frontName>productlist</frontName>
+                </args>
+            </productlist>
+        </routers>
+    </frontend>
+</config>

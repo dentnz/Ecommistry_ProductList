@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <productlist_index_index>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="productlist/productlist" name="ecommistry.productlist" template="ecommistry_productlist/productlist.phtml"/>
+            <block type="customer/account_dashboard" name="customer.account.link.back" template="customer/account/link/back.phtml" />
+        </reference>
+    </productlist_index_index>
+    <!-- Add a Product List menu item to the customer My Account area -->
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="ecommistry_productlist">
+                <name>productlist</name>
+                <path>productlist/index/index</path>
+                <label>Product List</label>
+            </action>
+        </reference>
+    </customer_account>
+</layout>

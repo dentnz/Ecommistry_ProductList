@@ -1,0 +1,66 @@
+<?php
+// Render a set of products in a list or slider
+$products = $this->getProducts();
+$productCount = $products->count();
+$mode = $this->getMode();
+?>
+<h1>Product List</h1>
+<?php if ($productCount > 0): ?>
+	<?php if ($mode == 'list'): // List mode ?>
+		<ul>
+		<?php foreach ($products as $product): ?>
+			<li>
+				<a href="<?php echo $this->striptags($product->getProductUrl()) ?>">
+					<?php echo $this->striptags($product->getName()) ?>
+				</a>
+			</li>
+		<?php endforeach ?>
+		</ul>
+		<p><a href="?mode=slider">Switch to Slider Mode</a></p>
+	<?php else: // Slider mode ?>
+		<div id="slideshow">
+			<?php foreach ($products as $product): ?>
+				<div>
+					<a title="<?php echo $this->striptags($product->getName()) ?>" href="<?php echo $this->striptags($product->getProductUrl()) ?>">
+						<img src="<?php echo $this->helper('catalog/image')->init($product, 'thumbnail')->resize(100, 100); ?>" />
+					</a>
+				</div>
+			<?php endforeach ?>
+		</div>
+
+		<style type="text/css">
+			#slideshow { 
+				margin: 0 auto; 
+				position: relative;
+				min-height:120px;
+			}
+
+			#slideshow > div { 
+			    position: absolute; 
+			    top: 10px; 
+			    left: 10px; 
+			    right: 10px; 
+			    bottom: 10px; 
+			}
+		</style>
+
+		<script>
+			$j(document).ready(function() {
+				$j("#slideshow > div:gt(0)").hide();
+
+				setInterval(function() { 
+					$j('#slideshow > div:first')
+					    .fadeOut(1000)
+					    .next()
+					    .fadeIn(1000)
+					    .end()
+					    .appendTo('#slideshow');
+					},  
+				4000);
+			});
+		</script>
+		<p><a href="?mode=list">Switch to List Mode</a></p>
+	<?php endif ?>
+<?php else: ?>
+<p>There are no products in the list to display</p>
+<?php endif ?>

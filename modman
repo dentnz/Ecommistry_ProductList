@@ -1,0 +1,4 @@
+app/etc/modules/Ecommistry_ProductList.xml app/etc/modules/Ecommistry_ProductList.xml
+app/code/local/Ecommistry/ProductList app/code/local/Ecommistry/ProductList
+app/design/frontend/base/default/template/ecommistry_productlist app/design/frontend/base/default/template/ecommistry_productlist
+app/design/frontend/base/default/layout/ecommistry_productlist.xml app/design/frontend/base/default/layout/ecommistry_productlist.xml

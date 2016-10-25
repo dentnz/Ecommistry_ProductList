@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<config>
+    <tabs>
+        <ecommistry translate="label" module="ecommistry_productlist">
+            <label>Ecommistry</label>
+            <sort_order>99999</sort_order>
+        </ecommistry>
+    </tabs>
+    <sections>
+        <ecommistry_productlist translate="label" module="ecommistry_productlist">
+            <label>Ecommistry Product List</label>
+            <tab>ecommistry</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+ 
+            <groups>
+                <ecommistry_productlistoptions translate="label" module="ecommistry_productlist">
+                    <label>Product List Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+ 
+                    <fields>
+                        <ecommistry_productlistlimit translate="label">
+                            <label>Product Limit: </label>
+                            <comment>Limit the display of products to the specified number</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ecommistry_productlistlimit>
+                    </fields>
+                </ecommistry_productlistoptions>
+            </groups>
+        </ecommistry_productlist>
+    </sections>    
+</config>
