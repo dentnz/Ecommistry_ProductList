@@ -43,22 +43,24 @@ $mode = $this->getMode();
 			    bottom: 10px; 
 			}
 		</style>
+		<?php if ($productCount > 1): ?>
+		<?php // If there is only one product in the slideshow, don't do the fadeIn/fadeOut at all ?>
+			<script>
+				$j(document).ready(function() {
+					$j("#slideshow > div:gt(0)").hide();
 
-		<script>
-			$j(document).ready(function() {
-				$j("#slideshow > div:gt(0)").hide();
-
-				setInterval(function() { 
-					$j('#slideshow > div:first')
-					    .fadeOut(1000)
-					    .next()
-					    .fadeIn(1000)
-					    .end()
-					    .appendTo('#slideshow');
-					},  
-				4000);
-			});
-		</script>
+					setInterval(function() { 
+						$j('#slideshow > div:first')
+						    .fadeOut(1000)
+						    .next()
+						    .fadeIn(1000)
+						    .end()
+						    .appendTo('#slideshow');
+						},  
+					4000);
+				});
+			</script>
+		<?php endif ?>
 		<p><a href="?mode=list">Switch to List Mode</a></p>
 	<?php endif ?>
 <?php else: ?>
