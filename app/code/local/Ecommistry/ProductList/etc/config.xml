@@ -2,8 +2,8 @@
 <!-- 
 Securely display a set of products in the customer account area, filtered by a new product attribute: 'handle_display'.
 
-@package 	Ecommistry_ProductList
-@author		Karl Lurman <karl.lurman@gmail.com 
+@package    Ecommistry_ProductList
+@author     Karl Lurman <karl.lurman@gmail.com 
 --> 
 <config>
     <modules>
@@ -17,45 +17,45 @@ Securely display a set of products in the customer account area, filtered by a n
                 <class>Ecommistry_ProductList_Model</class>
             </ecommistry_productlist>
         </models>
-    	<helpers>
-        	<ecommistry_productlist>
-            	<class>Ecommistry_ProductList_Helper</class>
-        	</ecommistry_productlist>
-    	</helpers>
-    	<blocks>
-        	<productlist>
-            	<class>Ecommistry_ProductList_Block</class>
-        	</productlist>
-    	</blocks>
+        <helpers>
+            <ecommistry_productlist>
+                <class>Ecommistry_ProductList_Helper</class>
+            </ecommistry_productlist>
+        </helpers>
+        <blocks>
+            <productlist>
+                <class>Ecommistry_ProductList_Block</class>
+            </productlist>
+        </blocks>
         <resources>
             <ecommistry_productlist_setup>
                 <setup>
                     <module>Ecommistry_ProductList</module>
                 </setup>
             </ecommistry_productlist_setup>
-        </resources>    	
+        </resources>        
     </global>
     <adminhtml>
-	    <acl>
-	        <resources>
-	            <admin>
-	                <children>
-	                    <system>
-	                        <children>
-	                            <config>
-	                                <children>
-	                                    <ecommistry_productlist>
-	                                        <title>Ecommistry Productlist</title>
-	                                    </ecommistry_productlist>
-	                                </children>
-	                            </config>
-	                        </children>
-	                    </system>
-	                </children>
-	            </admin>
-	        </resources>
-	    </acl>
-	</adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <ecommistry_productlist>
+                                            <title>Ecommistry Productlist</title>
+                                        </ecommistry_productlist>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
     <frontend>
         <layout>
             <updates>
